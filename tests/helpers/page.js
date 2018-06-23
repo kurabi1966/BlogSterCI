@@ -16,7 +16,7 @@ class CustomPage {
       }
     });
   }
-  // Constructore
+  // Constructore of CustomPage
   constructor(page){
     this.page = page;
   }
