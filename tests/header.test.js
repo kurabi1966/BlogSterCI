@@ -1,30 +1,17 @@
-// const puppeteer = require('puppeteer');
-// const sessionFactory = require('./factories/sessionFactory');
-// const userFactory = require('./factories/userFactory');
 const Page = require('./helpers/page');
 let page;
 
 beforeEach(async ()=>{
   page = await Page.build();
   await page.goto('http://localhost:3000');
-  // browser = await puppeteer.launch({
-  //   headless: false
-  // });
-  // page = await browser.newPage();
-  // await page.goto('http://localhost:3000');
 });
 
 afterEach(async () => {
-    // await browser.close();
-    // await page.close();
+    await page.close();
 });
 
 test('the header has the correct text', async () => {
-
-  // const text = await page.$eval('a.brand-logo', el => el.innerHTML);
-
   const text = await page.getContentsOf('a.brand-logo');
-
   expect(text).toEqual('Blogster');
 });
 
@@ -43,5 +30,3 @@ test('when signed in, shows My Blogs and Logout buttons', async()=>{
   expect(myblogs).toEqual('My Blogs');
 
 });
-
-// const logout = await page.$eval('#logout', el => el.innerHTML);

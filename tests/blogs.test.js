@@ -89,13 +89,3 @@ describe('When user not logged in', async () => {
       expect(result.error).toEqual('You must log in!');
     });
 });
-
-
-//
-// describe('When using valid form inputs', async()=>{
-//   beforeEach(async()=>{
-//
-//   });
-//   // Test 1
-//   // Test 2
-// });
